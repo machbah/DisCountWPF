@@ -1,0 +1,137 @@
+﻿<Page x:Class="DisCountWPF.View.Customer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="300"
+	Title="Customer">
+
+    <Grid Background="Azure"
+          ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+          ScrollViewer.CanContentScroll="True"
+          ScrollViewer.VerticalScrollBarVisibility="Auto">       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="117"/>
+            <ColumnDefinition Width="203"/>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Row="0" Height="50" Grid.ColumnSpan="2" />
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="NameInfo" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="2"
+                   BorderThickness="5"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   />
+            
+            <Label Grid.Row="1" Grid.Column="0" Content="User ID" BorderThickness="1" />
+            <Label x:Name="UserID" Grid.Row="1" Grid.Column="1" BorderThickness="1"
+                    />
+
+            <Label Grid.Row="2" Grid.Column="0" Width="150" Content="Todays Schema" />
+            <Label x:Name="DiscountSchema"                    
+                   Grid.Row="2" Grid.Column="1">
+
+            </Label>            
+
+        </Grid>
+
+        <GridSplitter Grid.Row="1" Grid.ColumnSpan="2" Height="50" />
+        <Button Grid.Row="1" 
+                Content="Products Available" 
+                Click="Products_Click" Margin="0,1,0,0"
+                />
+
+
+        <GridSplitter Grid.Row="2" Grid.ColumnSpan="2" Height="50" />
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>              
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Content="Order Item"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                />
+            <Button Content="ADD"
+                Grid.Row="0" 
+                Grid.Column="1" 
+                    Click="OrderADD_Click"
+                    Height="30"
+             />
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" x:Name="OrderItemGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            
+            
+        </Grid>
+
+
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="2"
+                       Content="Price And Discount"
+                       />
+            <Button Grid.Row="0" Grid.Column="2"
+                       Content="Calculate" Click="Calculate_Click"
+                       />
+            <Label Grid.Row="1" Grid.Column="0" 
+                       Content="Original Price"/>
+            <Label Grid.Row="1" Grid.Column="1" 
+                       Content="Discount Price"/>
+            <Label Grid.Row="1" Grid.Column="2" 
+                       Content="Discount Lists"/>
+
+
+            <TextBlock x:Name="OriPrice" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap"
+                       />
+            <TextBlock x:Name="DisPrice" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap"
+                       />
+            <TextBlock x:Name="DisList" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap"
+                       />
+        </Grid>
+    </Grid>
+</Page>

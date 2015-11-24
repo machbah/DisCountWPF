@@ -1,0 +1,43 @@
+﻿<Page x:Class="DisCountWPF.View.Products"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Products">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="List of Products" 
+               Grid.Row="0" Grid.Column="0"
+               FontSize="30"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <TextBlock Grid.Row="1" Text="Item No" Width="50" />          
+        <TextBlock Grid.Row="1" Text="Name" Width="70" />
+        <TextBlock Grid.Row="1" Text="Image" Width="70" />
+        <TextBlock Grid.Row="1" Text="Price" />
+
+        </StackPanel>
+        
+        <ListView Grid.Row="2" x:Name="lstProduct" BorderThickness="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding ID}" Width="50" Foreground="Red" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ProductName}" Width="70" />
+                        <Image Height="50" Width="50" Source="{Binding Path=ImageUrl}" />
+                        <TextBlock Text="{Binding Price}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>            
+        </ListView>        
+    </Grid>
+</Page>

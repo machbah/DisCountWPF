@@ -1,0 +1,109 @@
+﻿<Page x:Class="DisCountWPF.View.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Register">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="Register User" 
+               Grid.Row="0" HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Grid.ColumnSpan="2"/>
+        
+        <Label Grid.Row="1" 
+               Grid.Column="0" Content="First Name" 
+               HorizontalAlignment="Center"/>
+        <TextBox x:Name="FirstName"
+                 Grid.Row="1" Grid.Column="1"
+                 />
+
+        
+        
+        <Label Grid.Row="2" 
+               Grid.Column="0" Content="Middle Name" 
+               HorizontalAlignment="Center"/>
+        <TextBox x:Name="MiddleName"
+                 Grid.Row="2" Grid.Column="1"
+                 />
+
+        <Label Grid.Row="3" 
+               Grid.Column="0" Content="Last Name" 
+               HorizontalAlignment="Center"/>
+        <TextBox x:Name="LastName"
+                 Grid.Row="3" Grid.Column="1"
+                 />
+
+        <Label Grid.Row="4" 
+               Grid.Column="0" Content="City" 
+               HorizontalAlignment="Center"/>
+        <TextBox x:Name="CityName"
+                 Grid.Row="4" Grid.Column="1"
+                 />
+
+        <Label Grid.Row="5" 
+               Grid.Column="0" Content="Date of Birth" 
+               HorizontalAlignment="Center"/>
+        <DatePicker x:Name="Birthdate"
+                    Grid.Row="5" Grid.Column="1"
+                    />
+
+
+        <Label Grid.Row="6" 
+               Grid.Column="0" Content="User ID" 
+               HorizontalAlignment="Center"/>
+        <TextBox x:Name="UserID"
+                 Grid.Row="6" Grid.Column="1"
+                 />
+
+
+        <Label Grid.Row="7" 
+               Grid.Column="0" Content="Password" 
+               HorizontalAlignment="Center"/>
+        <PasswordBox x:Name="PassWord" 
+                     Grid.Column="1" 
+                     Grid.Row="7"/>
+
+
+        <Label Grid.Row="8" 
+               Grid.Column="0" Content="Confirm Password" 
+               HorizontalAlignment="Center"/>
+        <PasswordBox x:Name="RePassWord" 
+                     Grid.Column="1" 
+                     Grid.Row="8"/>
+        
+        <Button Grid.Row="9" 
+                Grid.Column="1" 
+                Content="Save" 
+                Width="100"
+                Click="Save_Click"
+                />
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Page>
